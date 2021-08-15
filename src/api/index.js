@@ -16,10 +16,7 @@ const getPlacesData = async (sw, ne) => {
         bl_longitude: sw.lng,
         tr_longitude: ne.lng,
       },
-      headers: {
-        'x-rapidapi-key': '367e485e99msh814695c433a143bp1ca29cjsn292576db0362',
-        'x-rapidapi-host': 'travel-advisor.p.rapidapi.com',
-      },
+     
     });
     return data;
   } catch (error) {
