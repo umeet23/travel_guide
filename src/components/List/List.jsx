@@ -12,10 +12,16 @@ import PropTypes from 'prop-types';
 import useStyles from './styles';
 import PlaceDetails from '../PlaceDetails/PlaceDetails';
 
-const List = ({ places, childClicked, isLoading }) => {
+const List = ({
+  places,
+  childClicked,
+  isLoading,
+  type,
+  setType,
+  rating,
+  setRating,
+}) => {
   const classes = useStyles();
-  const [type, setType] = useState('restaurants');
-  const [rating, setRating] = useState('');
   const [elRefs, setElRefs] = useState([]);
 
   useEffect(() => {
@@ -74,6 +80,10 @@ List.propTypes = {
   places: PropTypes.arrayOf(PlaceDetails).isRequired,
   childClicked: PropTypes.objectOf(PropTypes.any).isRequired,
   isLoading: PropTypes.bool.isRequired,
+  type: PropTypes.string.isRequired,
+  setType: PropTypes.func.isRequired,
+  rating: PropTypes.string.isRequired,
+  setRating: PropTypes.func.isRequired,
 };
 
 export default List;
